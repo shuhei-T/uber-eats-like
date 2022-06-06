@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 // components
 import Skeleton from '@mui/material/Skeleton';
 
-// api  
+// api
 import { fetchRestaurants } from '../apis/restaurants';
 
 // reducer
