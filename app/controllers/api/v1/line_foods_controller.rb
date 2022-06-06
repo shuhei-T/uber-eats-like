@@ -26,7 +26,6 @@ module Api
         end
 
         set_line_food(@ordered_food) # line_foodインスタンスを作成
-
         if @line_food.save
           render json: {
             line_food: @line_food
@@ -37,7 +36,7 @@ module Api
       end
 
       def replace
-        LineFood.active.other_restaurant(@ordered_food.restaurant.restaurant.id).each do |line_food|
+        LineFood.active.other_restaurant(@ordered_food.restaurant.id).each do |line_food|
           line_food.update_attribute(:active, false)
         end
 
