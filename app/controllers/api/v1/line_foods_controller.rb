@@ -2,7 +2,6 @@ module Api
   module V1
     class LineFoodsController < ApplicationController
       before_action :set_food, only: %i[create replace]
-
       def index
         line_foods = LineFood.active
         if line_foods.exists?
@@ -26,6 +25,7 @@ module Api
         end
 
         set_line_food(@ordered_food) # line_foodインスタンスを作成
+        
         if @line_food.save
           render json: {
             line_food: @line_food
